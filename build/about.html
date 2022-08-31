@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>About</title>
+    <link rel="stylesheet" href="about.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;400&family=Titillium+Web&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <nav>
+    <ul className="topnav" id="navBarClick">
+      <li>
+        <a href="index.html">Home</a>
+      </li>
+      <li>
+        <a href="#about">About</a>
+      </li>
+      <li>
+        <a href="#project">Projects</a>
+      </li>
+      <li>
+        <a href="#art">Art</a>
+      </li>
+      <li>
+        <a href="contact.html">Contact</a>
+      </li>
+    </ul>
+  </nav>
+  <body>
+    <h5 id="correct"></h5>
+    <h3 class="question" id="q-top">
+      In which cognitive development stage do children develop Theory of Mind?
+    </h3>
+    <map name="cognitive">
+      <area
+        class="sensori"
+        shape="rect"
+        coords="70,700,500,1400"
+        onClick="answer('Sensorimotor');"
+        href="#"
+      />
+      <area
+        shape="rect"
+        coords="600,700,900,1450"
+        onClick="answer('Pre-operational');"
+        href="#"
+      />
+      <area
+        shape="rect"
+        coords="1020,550,1300,1500"
+        onClick="answer('Concrete Operational');"
+        href="#"
+      />
+      <area
+        shape="rect"
+        coords="1400,300,1800,1500"
+        onClick="answer('Formal Operational');"
+        href="#"
+      />
+    </map>
+
+    <img src="cog-dev.PNG" usemap="#cognitive" />
+    <script type="text/javascript">
+      let quest = [
+        "In which cognitive development stage do children develop Theory of Mind?",
+        "If a child has yet to develop object permenance, what stage are they in?",
+        "In what stage do children grow out of egocentric thinking?",
+        "In what stage do children begin to understand conservation of mass?",
+        "In what stage of development to children begin to be capable of thinking abstractly about hypothetical ideas?",
+        "In what stage is the 'rouge task' performed on children to demonstrate if they can recognize themselves in a mirror?",
+        "In what stage can children think logically about math, analogies, and concrete events?",
+        "In what stage are children able to perform the pendulum task?",
+        "Which stage is named after children's reliance on movement and senses to experience the world around them?",
+        "In what stage are children tested on their theory of mind through the Sally Anne marble task?",
+      ];
+
+      let counter = 0;
+
+      function answer(answerId) {
+        if (
+          answerId === "Pre-operational" &&
+          (counter === 0 || counter === 2 || counter === 9)
+        ) {
+          document.getElementById("correct").innerHTML =
+            "Nice job! Here's another one.";
+          counter++;
+          document.getElementById("q-top").innerHTML = quest[counter];
+        } else if (
+          answerId === "Sensorimotor" &&
+          (counter === 1 || counter === 5 || counter === 8)
+        ) {
+          document.getElementById("correct").innerHTML =
+            "Nice job! Here's another one.";
+          counter++;
+          document.getElementById("q-top").innerHTML = quest[counter];
+        } else if (
+          answerId === "Concrete Operational" &&
+          (counter === 3 || counter === 6)
+        ) {
+          document.getElementById("correct").innerHTML =
+            "Nice job! Here's another one.";
+          counter++;
+          document.getElementById("q-top").innerHTML = quest[counter];
+        } else if (
+          answerId === "Formal Operational" &&
+          (counter === 4 || counter === 7)
+        ) {
+          document.getElementById("correct").innerHTML =
+            "Nice job! Here's another one.";
+          counter++;
+          document.getElementById("q-top").innerHTML = quest[counter];
+        } else {
+          document.getElementById("correct").innerHTML =
+            "Oops! Wrong answer, try again.";
+        }
+      }
+    </script>
+  </body>
+</html>
